@@ -15,4 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print variables
-        run: echo ${{ inputs.env-var }} ${{ secrets.token }}
+        run: echo ${{ secrets.token }} ${{ inputs.env-var }}
