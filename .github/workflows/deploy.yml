@@ -30,4 +30,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Semantic release
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPOSITORY_PAT }}
+          NPM_TOKEN: ${{ secrets.MY_GET_REGISTRY_TOKEN }}
         run: yarn semantic-release --branches="main"
