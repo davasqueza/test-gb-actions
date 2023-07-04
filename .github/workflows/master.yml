@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Execute deploy action
-        uses: ./.github/workflows/deploy.yml
+        uses: davasqueza/test-gb-actions/.github/workflows/deploy.yml@main
         with:
           env-var: ${{ vars.ENVIRONMENT_VARIABLE }}
           token: ${{ secrets.SECRET_TOKEN }}
