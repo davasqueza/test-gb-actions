@@ -6,14 +6,15 @@ on:
       env-var:
         required: true
         type: string
+      MY_GET_REGISTRY_URL:
+        type: string
+        required: true
     secrets:
       token:
         required: true
       REPOSITORY_PAT:
         required: true
       MY_GET_REGISTRY_TOKEN:
-        required: true
-      MY_GET_REGISTRY_URL:
         required: true
 jobs:
   deploy:
