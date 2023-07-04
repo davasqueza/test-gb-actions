@@ -8,7 +8,6 @@ jobs:
   master-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: Execute deploy action
         uses: davasqueza/test-gb-actions/.github/workflows/deploy.yml@main
         with:
