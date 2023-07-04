@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "18.12.1"
-          registry-url: ${{ secrets.MY_GET_REGISTRY_URL }}
+          registry-url: ${{ inputs.MY_GET_REGISTRY_URL }}
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Semantic release
