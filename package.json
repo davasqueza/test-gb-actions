@@ -1,0 +1,14 @@
+{
+  "name": "test-gb-actions",
+  "version": "0.0.0-development",
+  "main": "index.js",
+  "repository": "https://github.com/davasqueza/test-gb-actions.git",
+  "author": "Diego Vasquez <davasqueza@unal.edu.co>",
+  "license": "MIT",
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "semantic-release": "^21.0.6"
+  }
+}

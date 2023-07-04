@@ -11,3 +11,6 @@ jobs:
       env-var: ${{ vars.ENVIRONMENT_VARIABLE }}
     secrets:
       token: ${{ secrets.SECRET_TOKEN }}
+      REPOSITORY_PAT: ${{ secrets.REPOSITORY_PAT }}
+      MY_GET_REGISTRY_TOKEN: ${{ secrets.MY_GET_REGISTRY_TOKEN }}
+      MY_GET_REGISTRY_URL: ${{ secrets.MY_GET_REGISTRY_URL }}

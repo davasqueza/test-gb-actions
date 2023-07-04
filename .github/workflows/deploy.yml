@@ -9,9 +9,24 @@ on:
     secrets:
       token:
         required: true
+      REPOSITORY_PAT:
+        required: true
+      MY_GET_REGISTRY_TOKEN:
+        required: true
+      MY_GET_REGISTRY_URL:
+        required: true
 jobs:
   check-variables:
     runs-on: ubuntu-latest
     steps:
-      - name: Print variables
-        run: echo ${{ inputs.env-var }} ${{ secrets.token }}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "18.12.1"
+          registry-url: ${{ secrets.MY_GET_REGISTRY_URL }}
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Semantic release
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPOSITORY_PAT }}
+          NPM_TOKEN: ${{ secrets.MY_GET_REGISTRY_TOKEN }}
+        run: yarn semantic-release
