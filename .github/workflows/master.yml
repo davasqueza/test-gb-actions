@@ -1,0 +1,16 @@
+name: master
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  master-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute deploy action
+        uses: ./.github/actions/deploy/
+        with:
+          env-var: ${{ vars.ENVIRONMENT_VARIABLE }}
+        secrets:
+          - token: ${{ secrets.SECRET_TOKEN }}

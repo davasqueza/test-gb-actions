@@ -1,0 +1,21 @@
+name: deploy
+description: 'deploy to aws'
+
+on:
+  workflow_call:
+    inputs:
+      env-var:
+        required: true
+    secrets:
+      token:
+        required: true
+
+jobs:
+  reusable_workflow_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print variables
+        env:
+          ENV_VAR: ${{ github.event.inputs.env-var }}
+          TOKEN: ${{ secrets.token }}
+        run: echo %ENV_VAR% %TOKEN%
