@@ -9,7 +9,13 @@ on:
     secrets:
       token:
         required: true
-
+  workflow_dispatch:
+    inputs:
+      env-var:
+        required: true
+    secrets:
+      token:
+        required: true
 jobs:
   check-variables:
     runs-on: ubuntu-latest
