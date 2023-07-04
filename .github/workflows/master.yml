@@ -13,4 +13,4 @@ jobs:
         with:
           env-var: ${{ vars.ENVIRONMENT_VARIABLE }}
         secrets:
-          - token: ${{ secrets.SECRET_TOKEN }}
+          token: ${{ secrets.SECRET_TOKEN }}
