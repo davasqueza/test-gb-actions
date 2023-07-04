@@ -16,7 +16,7 @@ on:
       MY_GET_REGISTRY_URL:
         required: true
 jobs:
-  check-variables:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -30,4 +30,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.REPOSITORY_PAT }}
           NPM_TOKEN: ${{ secrets.MY_GET_REGISTRY_TOKEN }}
-        run: yarn semantic-release
+        run: yarn semantic-release --branches="main"
