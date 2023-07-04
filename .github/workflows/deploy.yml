@@ -5,9 +5,11 @@ on:
     inputs:
       env-var:
         required: true
+        type: string
     secrets:
       token:
         required: true
+        type: string
 jobs:
   check-variables:
     runs-on: ubuntu-latest
