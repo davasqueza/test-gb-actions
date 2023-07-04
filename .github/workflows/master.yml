@@ -6,10 +6,7 @@ on:
       - main
 jobs:
   master-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Execute deploy action
-        uses: davasqueza/test-gb-actions/.github/workflows/deploy.yml@main
-        with:
-          env-var: ${{ vars.ENVIRONMENT_VARIABLE }}
-          token: ${{ secrets.SECRET_TOKEN }}
+    uses: ./.github/workflows/deploy.yml
+    with:
+      env-var: ${{ vars.ENVIRONMENT_VARIABLE }}
+      token: ${{ secrets.SECRET_TOKEN }}
