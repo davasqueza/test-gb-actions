@@ -25,10 +25,9 @@ jobs:
         with:
           node-version: "18.12.1"
           registry-url: ${{ inputs.MY_GET_REGISTRY_URL }}
+      - name: Configure npm registry
+        run: npm config set //$MYGET_NPM_REGISTRY_URL:_authToken ${{ secrets.MY_GET_REGISTRY_TOKEN }}
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Semantic release
-        env:
-          GITHUB_TOKEN: ${{ secrets.REPOSITORY_PAT }}
-          NPM_TOKEN: ${{ secrets.MY_GET_REGISTRY_TOKEN }}
         run: yarn semantic-release --branches="main"
