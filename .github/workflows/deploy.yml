@@ -9,7 +9,6 @@ on:
     secrets:
       token:
         required: true
-        type: string
 jobs:
   check-variables:
     runs-on: ubuntu-latest
