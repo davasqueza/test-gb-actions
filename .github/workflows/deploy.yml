@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "18.12.1"
-          registry-url: ${{ inputs.MY_GET_REGISTRY_URL }}
+          registry-url: https://${{ inputs.MY_GET_REGISTRY_URL }}
       - name: Configure npm registry
         run: npm config set //${{ inputs.MY_GET_REGISTRY_URL }}:_authToken=${{ secrets.MY_GET_REGISTRY_TOKEN }}
       - name: Install dependencies
