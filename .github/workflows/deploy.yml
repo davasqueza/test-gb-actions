@@ -9,16 +9,9 @@ on:
     secrets:
       token:
         required: true
-  workflow_dispatch:
-    inputs:
-      env-var:
-        required: true
-    secrets:
-      token:
-        required: true
 jobs:
   check-variables:
     runs-on: ubuntu-latest
     steps:
       - name: Print variables
-        run: echo ${{ secrets.token }} ${{ inputs.env-var }}
+        run: echo ${{ inputs.env-var }} ${{ secrets.token }}
