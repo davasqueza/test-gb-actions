@@ -11,11 +11,11 @@ on:
         required: true
 
 jobs:
-  reusable_workflow_job:
+  check-variables:
     runs-on: ubuntu-latest
     steps:
       - name: Print variables
         env:
-          ENV_VAR: ${{ github.event.inputs.env-var }}
+          ENV_VAR: ${{ inputs.env-var }}
           TOKEN: ${{ secrets.token }}
         run: echo %ENV_VAR% %TOKEN%
