@@ -1,5 +1,4 @@
 name: deploy
-description: 'deploy to aws'
 
 on:
   workflow_call:
