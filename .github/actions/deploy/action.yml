@@ -2,7 +2,7 @@ name: deploy
 description: 'deploy to aws'
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       env-var:
         required: true
