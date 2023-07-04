@@ -2,7 +2,7 @@ name: deploy
 description: 'deploy to aws'
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       env-var:
         required: true
@@ -15,7 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print variables
-        env:
-          ENV_VAR: ${{ inputs.env-var }}
-          TOKEN: ${{ secrets.token }}
-        run: echo %ENV_VAR% %TOKEN%
+        run: echo ${{ inputs.env-var }} ${{ secrets.token }}
